@@ -1,0 +1,54 @@
+body{
+    height: 100%;
+    background-image: url(../images/Fondo-CFE.png);
+    background-size:cover;
+}
+input{
+    width: 100%;
+    border-radius: 25px ;
+    font-size: 1em ;
+    background-color:rgba(255, 255, 255, 0.149) ;
+    border: 0px ;
+    caret-color: white;
+    padding: 8px 15px 8px 15px ;
+    color: white ;
+}
+
+input:focus{
+    outline: none;
+}
+button{
+    margin-top: 10px;
+    border-radius: 25px ;
+    color: white;
+    background-color: #08E130;
+    border: 0px;
+    padding: 9px;
+}
+
+button:hover{
+    background-color: #08E130;
+}
+
+.padre{
+    height: 650px;
+}
+
+.container-login{
+    width:450px;
+}
+
+label{
+    color: rgb(197, 197, 197);
+    font-size: .8em;
+}
+
+h5{
+    padding-left: 30px;
+    border-left: 5px #08E130 solid;
+    margin-bottom: 30px;
+}
+.error{
+    color: red;
+    font-size: .8em;
+}
