@@ -128,7 +128,7 @@ function renderUbications() {
 
                             <div class="form-group mt-3 col-md-6 col-12">
                                 <label for="enlace${ubicacion.id}">Enlace</label>
-                                <input type="text" class="form-control mt-2" id="enlace${ubicacion.id}" required value="${ubicacion.enlace}">
+                                <input type="number" class="form-control mt-2" id="enlace${ubicacion.id}" required value="${ubicacion.enlace}">
                             </div>
 
                             <div class="form-group mt-3 col-md-6 col-12">
@@ -356,7 +356,6 @@ function deleteUbication(id_ubicacion) {
 
 function save() {
     const nombre = document.getElementById("nombre").value;
-    const direccion = document.getElementById("direccion").value;
     const idarea = document.getElementById("idarea").value
     const idsubestacion = document.getElementById("idsubestacion").value
     const idnumcirc = document.getElementById("idnumcirc").value
@@ -373,7 +372,7 @@ function save() {
             'Authorization': 'token ' + localStorage.getItem('token')
         },
         body: JSON.stringify({
-            nombre: nombre, direccion: direccion, idarea: idarea, idsubestacion: idsubestacion,
+            nombre: nombre, idarea: idarea, idsubestacion: idsubestacion,
             idnumcirc: idnumcirc, diagrama: diagrama
         }),
 
