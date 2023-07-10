@@ -13,5 +13,5 @@ function parseJwt(token) {
     return JSON.parse(jsonPayload);
 }
 const dataToken = parseJwt(token)
-document.getElementById("welcome-user").innerHTML = "Bienvenido " + dataToken.nombres + " " + dataToken.apellido_p + " " + dataToken.apellido_m
+document.getElementById("welcome-user").innerHTML = "Bienvenido al panel " + dataToken.nombres + " " + dataToken.apellido_p + " " + dataToken.apellido_m
 
