@@ -1,7 +1,8 @@
 let url = 'https://apicfe.onrender.com/api/areas'
 const tableBody = document.querySelector('#table-body');
+const btnSearch = document.querySelector('#btn-search');
 
-if(!localStorage.getItem('token')){
+if (!localStorage.getItem('token')) {
     window.location.href = '/index.html'
 }
 
@@ -44,6 +45,8 @@ fetch(url, {
 
 function search() {
     tableBody.innerHTML = ""
+    btnSearch.disabled = true
+
     fetch(url, {
         headers: {
             'Authorization': 'token ' + localStorage.getItem('token')
@@ -51,7 +54,7 @@ function search() {
     })
         .then(response => response.json())
         .then(data => {
-            var inputSearch = document.querySelector('#btnSearch');
+            var inputSearch = document.querySelector('#inputSearch');
             let textValue = inputSearch.value.toUpperCase()
             const tableBody = document.querySelector('#table-body');
             let filterData = []
@@ -88,8 +91,13 @@ function search() {
                     `;
                 tableBody.appendChild(row);
             });
+
+            btnSearch.disabled = false
         })
-        .catch(error => console.error(error));
+        .catch(error => {
+            console.error(error)
+            btnSearch.disabled = false
+        });
 }
 
 function editar(id_areas) {

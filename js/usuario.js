@@ -1,7 +1,8 @@
 let url = 'https://apicfe.onrender.com/api/usuarios'
 const tableBody = document.querySelector('#table-body');
+const btnSearch = document.querySelector('#btn-search');
 
-if(!localStorage.getItem('token')){
+if (!localStorage.getItem('token')) {
     window.location.href = '/index.html'
 }
 
@@ -47,6 +48,8 @@ fetch(url, {
 
 function search() {
     tableBody.innerHTML = ""
+    btnSearch.disabled = true
+
     fetch(url, {
         headers: {
             'Authorization': 'token ' + localStorage.getItem('token')
@@ -54,7 +57,7 @@ function search() {
     })
         .then(response => response.json())
         .then(data => {
-            var inputSearch = document.querySelector('#btnSearch');
+            var inputSearch = document.querySelector('#inputSearch');
             let textValue = inputSearch.value.toUpperCase()
             const tableBody = document.querySelector('#table-body');
             let filterData = []
@@ -68,7 +71,7 @@ function search() {
             filterData.forEach(usuario => {
                 let actualizado = usuario.updatedAt != null ? String(usuario.updatedAt).slice(0, 10) : "Sin actualización"
                 let registro = usuario.createdAt != null ? String(usuario.updatedAt).slice(0, 10) : "Sin registro"
-                let esadministrador = usuario.esadministrador ? "Si" : "No"
+                let esadministrador = usuario.esadministrador ? "Administrador" : "Usuario Normal"
                 const row = document.createElement('tr');
                 row.innerHTML = `
                 <td class="text-center">${usuario.id}</td>
@@ -94,8 +97,16 @@ function search() {
                 `;
                 tableBody.appendChild(row);
             });
+
+            btnSearch.disabled = false
+
         })
-        .catch(error => console.error(error));
+        .catch(error => {
+            console.error(error)
+            btnSearch.disabled = false
+        });
+
+
 }
 
 function editar(id_usuario) {

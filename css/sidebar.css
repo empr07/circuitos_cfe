@@ -65,12 +65,20 @@ body {
 
 
 .search {
+    cursor: pointer;
     height: 45px;
-    width: 36px;
+    width: 40px;
     border-left: 1px #348343 solid;
     border-top: 1px #348343 solid;
     border-bottom: 1px #348343 solid;
-    border-right: 0px;
+    border-right: 1px #348343 solid;
+    border-radius: 0px !important;
+}
+
+.search:disabled{
+    cursor:no-drop;
+    background-color: #157347b5 !important;
+
 }
 
 .input-search {
@@ -80,6 +88,8 @@ body {
     border-right: 1px #348343 solid;
     border-top: 1px #348343 solid;
     border-bottom: 1px #348343 solid;
+    border-left: 1px #348343 solid;
+
 }
 
 .input-search:focus {
