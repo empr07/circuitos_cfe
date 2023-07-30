@@ -27,7 +27,7 @@ if (id_subestacion > 0) {
         },
     }).then(response => response.json()).then(data => {
         document.getElementById("nombre").value = data.nombre
-        document.getElementById("idarea").value = data.area.id
+        document.getElementById("idarea").value = data.area?.id || ""
         document.getElementById("title").innerHTML = 'Editando Subestación: ' + data.id
     })
 

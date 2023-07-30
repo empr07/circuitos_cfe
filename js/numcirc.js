@@ -20,8 +20,8 @@ fetch(url, {
             row.innerHTML = `
                         <td class="text-center">${numcirc.id}</td>
                         <td class="text-center">${numcirc.numero}</td>
-                        <td class="text-center">${numcirc.area.nombre}</td>
-                        <td class="text-center">${numcirc.subestacion.nombre}</td>
+                        <td class="text-center">${numcirc.area?.nombre || 'Eliminada'}</td>
+                        <td class="text-center">${numcirc.subestacion?.nombre || 'Eliminada'}</td>
                         <td class="text-center">${registro}</td>
                         <td class="text-center">${actualizado}</td>
                         <td class="text-center">

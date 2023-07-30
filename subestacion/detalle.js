@@ -6,7 +6,7 @@ if (id_subestacion > 0) {
         },
     }).then(response => response.json()).then(data => {
         document.getElementById("nombre").innerHTML = data.nombre
-        document.getElementById("area").innerHTML = data.area.nombre
+        document.getElementById("area").innerHTML = data.area?.nombre || 'Eliminada'
         document.getElementById("title").innerHTML = 'Subestación: ' + data.id
     })
 

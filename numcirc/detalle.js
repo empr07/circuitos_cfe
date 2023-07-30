@@ -6,8 +6,8 @@ if (id_numcirc > 0) {
         },
     }).then(response => response.json()).then(data => {
         document.getElementById("numero").innerHTML = data.numero
-        document.getElementById("area").innerHTML = data.area.nombre
-        document.getElementById("subestacion").innerHTML = data.subestacion.nombre
+        document.getElementById("area").innerHTML = data.area?.nombre || 'Eliminada'
+        document.getElementById("subestacion").innerHTML = data.subestacion?.nombre || 'Eliminada'
         document.getElementById("title").innerHTML = 'Número de Circuito: ' + data.id
     })
 

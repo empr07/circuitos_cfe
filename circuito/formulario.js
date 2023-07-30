@@ -199,9 +199,9 @@ function loadEntity() {
         },
     }).then(response => response.json()).then(data => {
         document.getElementById("nombre").value = data.nombre
-        document.getElementById("idarea").value = data.area.id
-        document.getElementById("idsubestacion").value = data.subestacion.id
-        document.getElementById("idnumcirc").value = data.numcirc.id
+        document.getElementById("idarea").value = data.area?.id || ''
+        document.getElementById("idsubestacion").value = data.subestacion?.id || ''
+        document.getElementById("idnumcirc").value = data.numcirc?.id || ''
         document.getElementById("image").src = data.diagrama
         document.getElementById("title").innerHTML = 'Editando circuito: ' + data.id
         ubicaciones = []

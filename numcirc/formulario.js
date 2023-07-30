@@ -48,8 +48,8 @@ if (id_numcirc > 0) {
         },
     }).then(response => response.json()).then(data => {
         document.getElementById("numero").value = data.numero
-        document.getElementById("idarea").value = data.area.id
-        document.getElementById("idsubestacion").value = data.subestacion.id
+        document.getElementById("idarea").value = data.area?.id || ''
+        document.getElementById("idsubestacion").value = data.subestacion?.id || ''
         document.getElementById("title").innerHTML = 'Editando número de circuito: ' + data.id
     })
 
