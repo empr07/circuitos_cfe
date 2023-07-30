@@ -74,9 +74,9 @@ function search() {
                 row.innerHTML = `
                 <td class="text-center">${circuito.id}</td>
                 <td class="text-center">${circuito.nombre}</td>
-                <td class="text-center">${circuito.area.nombre}</td>
-                <td class="text-center">${circuito.subestacion.nombre}</td>
-                <td class="text-center">${circuito.numcirc.numero}</td>
+                <td class="text-center">${circuito.area?.nombre || 'Eliminada'}</td>
+                <td class="text-center">${circuito.subestacion?.nombre || 'Eliminada'}</td>
+                <td class="text-center">${circuito.numcirc?.numero || 'Eliminado'}</td>
                 <td class="text-center">${registro}</td>
                 <td class="text-center">${actualizado}</td>
                 <td class="text-center">

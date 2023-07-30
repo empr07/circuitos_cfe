@@ -72,7 +72,7 @@ function search() {
                 row.innerHTML = `
                 <td class="text-center">${subestacion.id}</td>
                 <td class="text-center">${subestacion.nombre}</td>
-                <td class="text-center">${subestacion.area.nombre}</td>
+                <td class="text-center">${subestacion.area?.nombre || 'Eliminada'}</td>
                 <td class="text-center">${registro}</td>
                 <td class="text-center">${actualizado}</td>
                 <td class="text-center">
