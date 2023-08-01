@@ -19,7 +19,7 @@ function onFileSelected() {
 
 const id_circuito = localStorage.getItem("id_circuito") ? localStorage.getItem("id_circuito") : 0
 
-fetch('https://apicfe.onrender.com/api/areas/', {
+fetch('https://apicfe.onrender.com/api/areas?notrelations=true', {
     headers: {
         'Authorization': 'token ' + localStorage.getItem('token')
     }
@@ -40,7 +40,7 @@ fetch('https://apicfe.onrender.com/api/areas/', {
     .catch(error => console.error('Error al obtener datos:', error));
 
 
-fetch('https://apicfe.onrender.com/api/subestaciones/', {
+fetch('https://apicfe.onrender.com/api/subestaciones?notrelations=true', {
     headers: {
         'Authorization': 'token ' + localStorage.getItem('token')
     }
@@ -60,7 +60,7 @@ fetch('https://apicfe.onrender.com/api/subestaciones/', {
     })
     .catch(error => console.error('Error al obtener datos:', error));
 
-fetch('https://apicfe.onrender.com/api/numcircs/', {
+fetch('https://apicfe.onrender.com/api/numcircs?notrelations=true', {
     headers: {
         'Authorization': 'token ' + localStorage.getItem('token')
     }

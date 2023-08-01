@@ -1,6 +1,6 @@
 const id_subestacion = localStorage.getItem("id_subestacion") ? localStorage.getItem("id_subestacion") : 0
 
-fetch('https://apicfe.onrender.com/api/areas/', {
+fetch('https://apicfe.onrender.com/api/areas?notrelations=true', {
     headers: {
         'Authorization': 'token ' + localStorage.getItem('token')
     }

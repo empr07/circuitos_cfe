@@ -1,6 +1,6 @@
 const id_numcirc = localStorage.getItem("id_numcirc") ? localStorage.getItem("id_numcirc") : 0
 
-fetch('https://apicfe.onrender.com/api/areas/', {
+fetch('https://apicfe.onrender.com/api/areas?notrelations=true', {
     headers: {
         'Authorization': 'token ' + localStorage.getItem('token')
     }
@@ -21,7 +21,7 @@ fetch('https://apicfe.onrender.com/api/areas/', {
     .catch(error => console.error('Error al obtener datos:', error));
 
 
-fetch('https://apicfe.onrender.com/api/subestaciones/', {
+fetch('https://apicfe.onrender.com/api/subestaciones?notrelations=true', {
     headers: {
         'Authorization': 'token ' + localStorage.getItem('token')
     }
